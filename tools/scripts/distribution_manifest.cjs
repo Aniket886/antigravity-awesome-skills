@@ -3,6 +3,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { execFileSync } = require("node:child_process");
+const { readTarballGitHead } = require("./distribution_pack.cjs");
 const { digest, createManifest, verifyManifest } = require("../lib/distribution-artifact");
 function lockfileDigest(root) {
   // Bind the immutable Git bytes, independent of checkout line-ending conversion.
@@ -21,8 +22,14 @@ function main(argv, env = process.env) {
     lockfileDigest: lockfileDigest(root),
   };
   const manifestPath = path.join(directory, "distribution.json");
-  if (mode === "create") fs.writeFileSync(manifestPath, JSON.stringify(createManifest(directory, expected), null, 2) + "\n", { flag: "wx" });
-  else verifyManifest(directory, JSON.parse(fs.readFileSync(manifestPath)), expected);
+  // Preserve structural/digest validation before reading any archive contents.
+  const manifest = mode === "create" ? createManifest(directory, expected)
+    : JSON.parse(fs.readFileSync(manifestPath));
+  if (mode === "verify") verifyManifest(directory, manifest, expected);
+  // Digest equality alone does not prove the npm installer can resolve this release.
+  if (readTarballGitHead(path.join(directory, "package.tgz")) !== expected.commit)
+    throw new Error("Candidate gitHead is missing or differs from the immutable release commit");
+  if (mode === "create") fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n", { flag: "wx" });
 }
 if (require.main === module) { try { main(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }
 module.exports = { main, lockfileDigest };
