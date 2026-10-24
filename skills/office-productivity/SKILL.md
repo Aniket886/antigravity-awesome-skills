@@ -28,8 +28,7 @@ Use this workflow when:
 ### Phase 1: Document Creation
 
 #### Skills to Invoke
-- `libreoffice-writer` - LibreOffice Writer
-- `docx-official` - Microsoft Word
+- `writer` - LibreOffice Writer
 
 #### Actions
 1. Design document template
@@ -40,17 +39,17 @@ Use this workflow when:
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-writer to create ODT documents
+Use @writer to create ODT documents
 ```
 
 ```
-Use @docx-official to create Word documents
+Use @writer to create documents and verify DOCX export compatibility
 ```
 
 ### Phase 2: Spreadsheet Automation
 
 #### Skills to Invoke
-- `libreoffice-calc` - LibreOffice Calc
+- `calc` - LibreOffice Calc
 - `googlesheets-automation` - Google Sheets
 
 #### Actions
@@ -62,18 +61,17 @@ Use @docx-official to create Word documents
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-calc to create ODS spreadsheets
+Use @calc to create ODS spreadsheets
 ```
 
 ```
-Use @libreoffice-calc to create and export spreadsheets after verifying XLSX format compatibility
+Use @calc to create and export spreadsheets after verifying XLSX format compatibility
 ```
 
 ### Phase 3: Presentation Generation
 
 #### Skills to Invoke
-- `libreoffice-impress` - LibreOffice Impress
-- `pptx-official` - PowerPoint
+- `impress` - LibreOffice Impress
 - `frontend-slides` - HTML slides
 - `nanobanana-ppt-skills` - AI PPT generation
 
@@ -86,11 +84,11 @@ Use @libreoffice-calc to create and export spreadsheets after verifying XLSX for
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-impress to create ODP presentations
+Use @impress to create ODP presentations
 ```
 
 ```
-Use @pptx-official to create PowerPoint presentations
+Use @impress to create presentations and verify PPTX export compatibility
 ```
 
 ```
@@ -100,8 +98,8 @@ Use @frontend-slides to create HTML presentations
 ### Phase 4: Format Conversion
 
 #### Skills to Invoke
-- `libreoffice-writer` - Document conversion
-- `libreoffice-calc` - Spreadsheet conversion
+- `writer` - Document conversion
+- `calc` - Spreadsheet conversion
 
 #### Actions
 1. Identify source format
@@ -112,13 +110,13 @@ Use @frontend-slides to create HTML presentations
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-writer to convert documents
+Use @writer to convert documents
 ```
 
 ### Phase 5: Document Automation
 
 #### Skills to Invoke
-- `libreoffice-writer` - Mail merge
+- `writer` - Mail merge
 - `workflow-automation` - Workflow automation
 - `file-organizer` - File organization
 
@@ -131,7 +129,7 @@ Use @libreoffice-writer to convert documents
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-writer to perform mail merge
+Use @writer to perform mail merge
 ```
 
 ```
@@ -141,7 +139,7 @@ Use @workflow-automation to automate document workflows
 ### Phase 6: Graphics and Diagrams
 
 #### Skills to Invoke
-- `libreoffice-draw` - Vector graphics
+- `draw` - Vector graphics
 - `canvas-design` - Canvas design
 - `mermaid-expert` - Diagram generation
 
@@ -154,7 +152,7 @@ Use @workflow-automation to automate document workflows
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-draw to create vector graphics
+Use @draw to create vector graphics
 ```
 
 ```
@@ -164,7 +162,7 @@ Use @mermaid-expert to create diagrams
 ### Phase 7: Database Integration
 
 #### Skills to Invoke
-- `libreoffice-base` - LibreOffice Base
+- `base` - LibreOffice Base
 - `database-architect` - Database design
 
 #### Actions
@@ -176,21 +174,21 @@ Use @mermaid-expert to create diagrams
 
 #### Copy-Paste Prompts
 ```
-Use @libreoffice-base to create database reports
+Use @base to create database reports
 ```
 
 ## Office Application Workflows
 
 ### LibreOffice
 ```
-Skills: libreoffice-writer, libreoffice-calc, libreoffice-impress, libreoffice-draw, libreoffice-base
+Skills: writer, calc, impress, draw, base
 Formats: ODT, ODS, ODP, ODG, ODB
 ```
 
 ### Microsoft Office
 ```
-Skills: docx-official, pptx-official
-Spreadsheets: use libreoffice-calc; verify XLSX export compatibility
+Skills: writer, calc, impress (LibreOffice; verify Office format compatibility)
+Spreadsheets: use calc; verify XLSX export compatibility
 Formats: DOCX, XLSX, PPTX
 ```
 

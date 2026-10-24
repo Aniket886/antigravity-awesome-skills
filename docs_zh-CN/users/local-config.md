@@ -29,9 +29,6 @@
 
 为您的特定项目积极使用的技能：
 
-- `docx-official` (+ 符号链接 `docx`) - 官方 Anthropic Word 操作
-- `pdf-official` (+ 符号链接 `pdf`) - 官方 Anthropic PDF 操作
-- `pptx-official` (+ 符号链接 `pptx`) - 官方 Anthropic PowerPoint 操作
 - `react-best-practices` - Vercel 的 40+ 性能优化规则
 - `web-design-guidelines` - Vercel 的 100+ UI/UX 审计规则
 - `frontend-dev-guidelines` - 现代 React/TS 开发模式
@@ -149,5 +146,3 @@ local snapshot/
 **推荐技能**：35 个高优先级
 **快照总数**：96 个技能 + 4 个符号链接 = 100 个总计
 **最近添加到推荐**：`senior-fullstack`、`concise-planning`、`address-github-comments`、`javascript-mastery`、`workflow-automation`、`llm-app-patterns`、`autonomous-agent-patterns`、`prompt-library`
-
-> 2026-10-23：已撤回 xlsx-official 安装建议；本历史清单不构成当前安装授权。
