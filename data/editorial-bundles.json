@@ -507,8 +507,12 @@
           "summary": "Coordinate document, spreadsheet, and slide workflows."
         },
         {
-          "id": "pdf-official",
-          "summary": "Extract, generate, and manipulate PDFs."
+          "id": "docx-official",
+          "summary": "Create, edit, and inspect Word-compatible documents."
+        },
+        {
+          "id": "pptx-official",
+          "summary": "Create and edit PowerPoint-compatible presentations."
         },
         {
           "id": "pdf-conversion-router",
@@ -2554,7 +2558,8 @@
       "to": "aas-documents-presentations",
       "preservedSkills": [
         "office-productivity",
-        "pdf-official",
+        "docx-official",
+        "pptx-official",
         "google-docs-automation",
         "google-slides-automation",
         "google-sheets-automation"

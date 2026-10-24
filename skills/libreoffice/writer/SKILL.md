@@ -181,7 +181,7 @@ soffice --headless --convert-to pdf:writer_pdf_Export document.odt
 - impress
 - draw
 - base
-- pdf-official
+- docx-official
 - workflow-automation
 
 ## Limitations
